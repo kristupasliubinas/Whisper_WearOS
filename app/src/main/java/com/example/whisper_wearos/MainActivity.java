@@ -38,13 +38,15 @@ public class MainActivity extends WearableActivity {
         //build the notification
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentTitle("Whisper Reply")
-                .setContentText("I agree!");
+                .setContentTitle("squidward replied:")
+                .setContentText("I love going to the gym!!");
 
-        //create the intent needed to show the notification
-        Intent notificationIntent = new Intent(this, MainActivity.class);
+        //create the intent for the Reply Activity
+        Intent notificationIntent = new Intent(this, ReplyActivity.class);
         PendingIntent contentIntent = PendingIntent.getActivity(this,0, notificationIntent, 0);
-        notificationBuilder.setContentIntent(contentIntent);
+
+        //set the intent that will fire when the user taps the notification
+        notificationBuilder.setContentIntent(contentIntent).setAutoCancel(true); //automatically removes the notification when the user taps it
 
         //add a notification
         NotificationManagerCompat manager = NotificationManagerCompat.from(this);
