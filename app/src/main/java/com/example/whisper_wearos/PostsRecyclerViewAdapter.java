@@ -1,5 +1,6 @@
 package com.example.whisper_wearos;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,12 +36,13 @@ public class PostsRecyclerViewAdapter extends RecyclerView.Adapter<PostsRecycler
         holder.whisper.setText(postsDataset[position].getWhisper());
 
         // if I wanted to specify an action when a post gets clicked
-//        holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // specify what happens when a post gets clicked
-//            }
-//        });
+        holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // specify what happens when a post gets clicked
+                openActionDrawer(v);
+            }
+        });
     }
 
     @Override
@@ -61,6 +63,17 @@ public class PostsRecyclerViewAdapter extends RecyclerView.Adapter<PostsRecycler
             this.userId = itemView.findViewById(R.id.userId);
             this.whisper = itemView.findViewById(R.id.messageTextView);
         }
+    }
+
+
+    // the Adapter class is now complete
+
+    // methods for additional functionality in this class go here
+
+    // launch the Action Drawer activity
+    public void openActionDrawer (View v) {
+        Intent intent = new Intent(v.getContext(), ActionDrawerActivity.class);
+        v.getContext().startActivity(intent);
     }
 
 }

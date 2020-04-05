@@ -9,66 +9,41 @@
     android:background="@color/dark_grey"
     tools:context=".ReplyActivity">
 
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/content"
+
+    <!--THE RECYCLERVIEW FOR ALL WHISPER POSTS-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/postsRecyclerView"
+        android:scrollbars="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/content_frame"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/messageTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="I love going to the gym!!"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/userId"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="squidward:"
-                android:textSize="8sp"
-                app:layout_constraintBottom_toTopOf="@+id/messageTextView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent" />
 
 
-    </androidx.core.widget.NestedScrollView>
+    <!-- THE ACTION DRAWER-->
 
 
-<!--    trying to achieve this functionality with a a broader WearableDrawerView instead of its specific subclass WearableActionDrawerView -->
-    <androidx.wear.widget.drawer.WearableDrawerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="bottom"
-        android:background="@color/red"
-        app:drawerContent="@menu/action_drawer_menu">
-<!--        app:peekView="@+id/peek_view">-->
-
-        <FrameLayout
-            android:id="@menu/action_drawer_menu"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </androidx.wear.widget.drawer.WearableDrawerView>
-
-    <!--    trying to achieve this functionality with a helper class WearableActionDrawerView which is specifically created for Action Drawers-->
-<!--    <androidx.wear.widget.drawer.WearableActionDrawerView-->
-<!--        android:id="@+id/bottom_action_drawer"-->
+<!--&lt;!&ndash;    trying to achieve this functionality with a a broader WearableDrawerView instead of its specific subclass WearableActionDrawerView &ndash;&gt;-->
+<!--    <androidx.wear.widget.drawer.WearableDrawerView-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="match_parent"-->
-<!--        android:background="@color/grey"-->
-<!--        app:actionMenu="@menu/action_drawer_menu" />-->
+<!--        android:layout_gravity="bottom"-->
+<!--        android:background="@color/red"-->
+<!--        app:drawerContent="@menu/action_drawer_menu">-->
+<!--&lt;!&ndash;        app:peekView="@+id/peek_view">&ndash;&gt;-->
+
+<!--        <FrameLayout-->
+<!--            android:id="@menu/action_drawer_menu"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent" />-->
+
+<!--    </androidx.wear.widget.drawer.WearableDrawerView>-->
+
+    <!--    trying to achieve this functionality with a helper class WearableActionDrawerView which is specifically created for Action Drawers-->
+    <androidx.wear.widget.drawer.WearableActionDrawerView
+        android:id="@+id/bottom_action_drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey"
+        app:actionMenu="@menu/action_drawer_menu" />
 
 </androidx.wear.widget.drawer.WearableDrawerLayout>
