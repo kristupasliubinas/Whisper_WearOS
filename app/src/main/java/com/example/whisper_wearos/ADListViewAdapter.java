@@ -11,13 +11,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class MyAdapter extends ArrayAdapter<String> {
+public class ADListViewAdapter extends ArrayAdapter<String> {
 
     Context context;
     String rTitle[];
     int rImgs[];
 
-    public MyAdapter (Context c, String title[], int imgs[]) {
+    public ADListViewAdapter(Context c, String title[], int imgs[]) {
         super(c, R.layout.row, R.id.actionText, title);
         this.context = c;
         this.rTitle = title;

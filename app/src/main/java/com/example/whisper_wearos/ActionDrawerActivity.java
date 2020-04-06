@@ -26,9 +26,9 @@ public class ActionDrawerActivity extends WearableActivity {
 
         listView = findViewById(R.id.actionDrawer);
 
-        // create an adapter class --> MyAdapter.java
+        // create an adapter class --> ADListViewAdapter.java
 
-        MyAdapter adapter = new MyAdapter(this, mTitle, images);
+        ADListViewAdapter adapter = new ADListViewAdapter(this, mTitle, images);
         // pass the adapter to the ListView
         listView.setAdapter(adapter);
 
