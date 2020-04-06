@@ -14,7 +14,7 @@ import java.util.List;
 public class ActionDrawerActivity extends WearableActivity {
 
     private ListView listView;
-    String mTitle[] = {"Like", "Reply", "Chat"};
+    String mTitle[] = {"Like", "Reply", "Flag Whisper"};
     int images[] = {R.drawable.ic_m_white_48dp, R.drawable.ic_m_white_48dp, R.drawable.ic_m_white_48dp};
 
     @Override
@@ -43,7 +43,7 @@ public class ActionDrawerActivity extends WearableActivity {
                     displaySpeechRecognizer();
                 }
                 if (position == 2) {
-                    Toast.makeText(ActionDrawerActivity.this, "Start a chat", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ActionDrawerActivity.this, "Flagged as inappropriate", Toast.LENGTH_SHORT).show();
                 }
             }
         });
