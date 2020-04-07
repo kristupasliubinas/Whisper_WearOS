@@ -12,11 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="end"
-        android:background="@color/red"
+        android:background="#1C004D"
         android:choiceMode="singleChoice"
         android:divider="@android:color/transparent"
-        android:dividerHeight="0dp">
-    </ListView>
+        android:dividerHeight="0dp"/>
 
 </LinearLayout>
 
