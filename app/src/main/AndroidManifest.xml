@@ -12,12 +12,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@android:style/Theme.DeviceDefault">
-        <activity android:name=".ActionDrawerActivity"/>
-        <activity android:name=".ReplyActivity" />
-
         <uses-library
             android:name="com.google.android.wearable"
             android:required="true" />
+
         <!--
                Set to true if your app is Standalone, that is, it does not require the handheld
                app to run.
@@ -26,6 +24,11 @@
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
 
+        <activity
+            android:name=".FurtherRepliesActivity"
+            android:label="@string/title_activity_further_replies"/>
+        <activity android:name=".ActionDrawerActivity" />
+        <activity android:name=".ReplyActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">

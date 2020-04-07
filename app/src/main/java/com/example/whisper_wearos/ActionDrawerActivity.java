@@ -14,8 +14,8 @@ import java.util.List;
 public class ActionDrawerActivity extends WearableActivity {
 
     private ListView listView;
-    String mTitle[] = {"Like", "Reply", "Flag Whisper"};
-    int images[] = {R.drawable.ic_m_white_48dp, R.drawable.ic_m_white_48dp, R.drawable.ic_m_white_48dp};
+    String mTitle[] = {"Like", "Reply", "View Replies" ,"Flag Whisper"};
+    int images[] = {R.drawable.ic_m_white_48dp, R.drawable.ic_m_white_48dp, R.drawable.ic_m_white_48dp, R.drawable.ic_m_white_48dp};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +43,9 @@ public class ActionDrawerActivity extends WearableActivity {
                     displaySpeechRecognizer();
                 }
                 if (position == 2) {
+                    openFurtherReplies();
+                }
+                if (position == 3) {
                     Toast.makeText(ActionDrawerActivity.this, "Flagged as inappropriate", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -68,5 +71,12 @@ public class ActionDrawerActivity extends WearableActivity {
 
             Toast.makeText(ActionDrawerActivity.this, "Reply posted", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    // METHODS FOR VIEWING FURTHER REPLIES
+
+    public void openFurtherReplies () {
+        Intent intent = new Intent(this, FurtherRepliesActivity.class);
+        startActivity(intent);
     }
 }
