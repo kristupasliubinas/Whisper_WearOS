@@ -3,6 +3,7 @@ package com.example.whisper_wearos;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
+import android.support.wearable.activity.ConfirmationActivity;
 import android.support.wearable.activity.WearableActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,8 +15,8 @@ import java.util.List;
 public class ActionDrawerActivity extends WearableActivity {
 
     private ListView listView;
-    String mTitle[] = {"Like", "Reply", "View Replies" ,"Flag Whisper"};
-    int images[] = {R.drawable.ic_m_white_48dp, R.drawable.ic_m_white_48dp, R.drawable.ic_m_white_48dp, R.drawable.ic_m_white_48dp};
+    String mTitle[] = {"Like", "Reply", "View replies","Open on phone","Flag Whisper"};
+    int images[] = {R.drawable.like, R.drawable.reply, R.drawable.viewreplies, R.drawable.openphone,R.drawable.flag};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,7 @@ public class ActionDrawerActivity extends WearableActivity {
         // pass the adapter to the ListView
         listView.setAdapter(adapter);
 
-        // set item click on list view
+        // specify what happens when an item in the list gets clicked
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -46,7 +47,11 @@ public class ActionDrawerActivity extends WearableActivity {
                     openFurtherReplies();
                 }
                 if (position == 3) {
-                    Toast.makeText(ActionDrawerActivity.this, "Flagged as inappropriate", Toast.LENGTH_SHORT).show();
+                    confirmationAnimation(ConfirmationActivity.OPEN_ON_PHONE_ANIMATION, "Whisper opened on the phone");
+                }
+                if (position == 4) {
+                    //Toast.makeText(ActionDrawerActivity.this, "Flagged as inappropriate", Toast.LENGTH_SHORT).show();
+                    confirmationAnimation(ConfirmationActivity.SUCCESS_ANIMATION, "Flagged as inappropriate");
                 }
             }
         });
@@ -69,7 +74,8 @@ public class ActionDrawerActivity extends WearableActivity {
 
             String spokenText = results.get(0);
 
-            Toast.makeText(ActionDrawerActivity.this, "Reply posted", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(ActionDrawerActivity.this, "Reply posted", Toast.LENGTH_SHORT).show();
+            confirmationAnimation(ConfirmationActivity.SUCCESS_ANIMATION, "Reply posted");
         }
     }
 
@@ -77,6 +83,15 @@ public class ActionDrawerActivity extends WearableActivity {
 
     public void openFurtherReplies () {
         Intent intent = new Intent(this, FurtherRepliesActivity.class);
+        startActivity(intent);
+    }
+
+    // DISPLAY A CONFIRMATION ANIMATION FOR AN ACTION
+
+    public void confirmationAnimation (int animation, String message) {
+        Intent intent = new Intent(this, ConfirmationActivity.class);
+        intent.putExtra(ConfirmationActivity.EXTRA_ANIMATION_TYPE, animation);
+        intent.putExtra(ConfirmationActivity.EXTRA_MESSAGE, message);
         startActivity(intent);
     }
 }

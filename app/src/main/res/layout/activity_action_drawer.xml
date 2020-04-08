@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#1C004D"
     android:orientation="vertical"
     tools:context=".ActionDrawerActivity">
 
@@ -11,11 +12,13 @@
         android:id="@+id/actionDrawer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="end"
         android:background="#1C004D"
         android:choiceMode="singleChoice"
         android:divider="@android:color/transparent"
-        android:dividerHeight="0dp"/>
+        android:dividerHeight="0dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="20dp"
+        android:scrollbars="none" />
 
 </LinearLayout>
 
