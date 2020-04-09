@@ -3,6 +3,7 @@ package com.example.whisper_wearos;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.wearable.activity.ConfirmationActivity;
 import android.support.wearable.activity.WearableActivity;
 import android.view.View;
 import android.widget.Button;
@@ -13,21 +14,25 @@ import androidx.core.app.NotificationManagerCompat;
 
 public class MainActivity extends WearableActivity {
 
-    private Button notificationButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         //get access to views defined in layout
-        notificationButton = findViewById(R.id.notificationButton);
+        Button notificationButton = findViewById(R.id.notificationButton);
 
         //specify what happens when notificationButton is pressed
         notificationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 addNotification();
+
+                // Display confirmation animation
+                Intent intent = new Intent(v.getContext(), ConfirmationActivity.class);
+                intent.putExtra(ConfirmationActivity.EXTRA_ANIMATION_TYPE, ConfirmationActivity.SUCCESS_ANIMATION);
+                intent.putExtra(ConfirmationActivity.EXTRA_MESSAGE, "Replies received. Check notifications!");
+                startActivity(intent);
             }
         });
     }
