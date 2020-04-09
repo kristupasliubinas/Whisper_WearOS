@@ -50,7 +50,7 @@ public class MainActivity extends WearableActivity {
     private void addNotification () {
         //build the notification
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.mipmap.ic_whisper)
                 .setContentTitle("Anonymous replied:")
                 .setContentText("I study for exams 📚");
 
