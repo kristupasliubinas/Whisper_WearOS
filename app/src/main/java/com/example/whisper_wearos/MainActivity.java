@@ -21,6 +21,7 @@ public class MainActivity extends WearableActivity {
 
         //get access to views defined in layout
         Button notificationButton = findViewById(R.id.notificationButton);
+        Button browseButton = findViewById(R.id.browseButton);
 
         //specify what happens when notificationButton is pressed
         notificationButton.setOnClickListener(new View.OnClickListener() {
@@ -35,6 +36,15 @@ public class MainActivity extends WearableActivity {
                 startActivity(intent);
             }
         });
+
+        //specify what happens when browseButton is pressed
+        browseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), GeneralContentActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void addNotification () {
@@ -42,7 +52,7 @@ public class MainActivity extends WearableActivity {
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle("Anonymous replied:")
-                .setContentText("I study for exams");
+                .setContentText("I study for exams 📚");
 
         //create the intent for the Reply Activity
         Intent notificationIntent = new Intent(this, ReplyActivity.class);

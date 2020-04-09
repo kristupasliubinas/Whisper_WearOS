@@ -74,12 +74,12 @@
                     android:backgroundTint="#6199F3"
                     android:text="Receive Replies"
                     android:textSize="14sp"
-                    app:layout_constraintBottom_toTopOf="@+id/button"
+                    app:layout_constraintBottom_toTopOf="@+id/browseButton"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/browseButton"
                     android:layout_width="130dp"
                     android:layout_height="45dp"
                     android:layout_marginBottom="28dp"

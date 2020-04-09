@@ -6,4 +6,5 @@
     -->
     <string name="hello_world">Hello Square World!</string>
     <string name="title_activity_further_replies">FurtherRepliesActivity</string>
+    <string name="title_activity_general_content">GeneralContentActivity</string>
 </resources>

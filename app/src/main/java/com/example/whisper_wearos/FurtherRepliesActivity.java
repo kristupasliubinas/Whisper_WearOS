@@ -42,7 +42,7 @@ public class FurtherRepliesActivity extends WearableActivity {
         snapHelper.attachToRecyclerView(recyclerView);
 
 
-        // SET BACKGROUND TO A DIFFERENT COLOUR FOR FURTHER REPLIES
+        // SET BACKGROUND TO A DIFFERENT COLOUR FOR FURTHER REPLIES VIEW
 
         ConstraintLayout cl = findViewById(R.id.postsLayout);
         cl.setBackgroundColor(Color.rgb(0, 20, 40));

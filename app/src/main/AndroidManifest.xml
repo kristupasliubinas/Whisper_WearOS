@@ -24,10 +24,13 @@
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
 
+        <activity
+            android:name=".GeneralContentActivity"
+            android:label="@string/title_activity_general_content"/>
         <activity android:name="android.support.wearable.activity.ConfirmationActivity" />
         <activity
             android:name=".FurtherRepliesActivity"
-            android:label="@string/title_activity_further_replies"/>
+            android:label="@string/title_activity_further_replies" />
         <activity android:name=".ActionDrawerActivity" />
         <activity android:name=".ReplyActivity" />
         <activity
