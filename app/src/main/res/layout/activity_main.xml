@@ -57,7 +57,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="14dp"
-                    android:text="How are you spending time on quarantine?"
+                    android:text="How are you spending time in quarantine?"
                     android:textAlignment="center"
                     android:textAllCaps="false"
                     android:textColor="#FFFFFF"

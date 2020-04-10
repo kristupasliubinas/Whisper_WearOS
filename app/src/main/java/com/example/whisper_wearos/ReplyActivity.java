@@ -1,8 +1,10 @@
 package com.example.whisper_wearos;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.wearable.activity.WearableActivity;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
@@ -37,5 +39,11 @@ public class ReplyActivity extends WearableActivity {
         // use the PagerSnapHelper class to snap pages to the screen and achieve paging functionality
         SnapHelper snapHelper = new PagerSnapHelper();
         snapHelper.attachToRecyclerView(recyclerView);
+
+
+        // SET BACKGROUND TO A DIFFERENT COLOUR FOR FURTHER REPLIES VIEW
+
+        ConstraintLayout cl = findViewById(R.id.postsLayout);
+        cl.setBackgroundColor(Color.rgb(76, 11, 33));
     }
 }

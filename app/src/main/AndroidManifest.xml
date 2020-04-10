@@ -31,7 +31,7 @@
         <activity
             android:name=".FurtherRepliesActivity"
             android:label="@string/title_activity_further_replies" />
-        <activity android:name=".ActionDrawerActivity" />
+        <activity android:name=".ActionDrawerActivity"/>
         <activity android:name=".ReplyActivity" />
         <activity
             android:name=".MainActivity"

@@ -47,6 +47,6 @@ public class GeneralContentActivity extends WearableActivity {
         // SET BACKGROUND TO A DIFFERENT COLOUR FOR GENERAL CONTENT VIEW
 
         ConstraintLayout cl = findViewById(R.id.postsLayout);
-        cl.setBackgroundColor(Color.rgb(76, 11, 33));
+        cl.setBackgroundColor(Color.rgb(77, 40, 32));
     }
 }

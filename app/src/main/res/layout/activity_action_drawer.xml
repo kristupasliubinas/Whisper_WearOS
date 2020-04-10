@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1C004D"
+    android:background="#3A2166"
     android:orientation="vertical"
     tools:context=".ActionDrawerActivity">
 
@@ -12,7 +12,7 @@
         android:id="@+id/actionDrawer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#1C004D"
+        android:background="#3A2166"
         android:choiceMode="singleChoice"
         android:divider="@android:color/transparent"
         android:dividerHeight="0dp"
