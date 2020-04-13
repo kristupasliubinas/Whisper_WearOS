@@ -24,6 +24,8 @@ public class ReplyActivity extends WearableActivity {
         PostsRecyclerViewData[] posts = new PostsRecyclerViewData[] {
               new PostsRecyclerViewData("Anonymous", "I study for exams 📚"),
                 new PostsRecyclerViewData("anon", "Cleaning the house"),
+                new PostsRecyclerViewData("annoyed", "Shut up with your quarantine"),
+                new PostsRecyclerViewData("Baker", "I fell in love with baking 🍰 I was never really good at it so I made it my goal to improve given all this free time!"),
                 new PostsRecyclerViewData("Secret", "Watch Netflix!"),
         };
 
